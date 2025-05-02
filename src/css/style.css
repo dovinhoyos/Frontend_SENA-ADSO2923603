@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f0f0f0;
+    line-height: 1.6;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  /* Estilo del encabezado fijo */
+  header {
+    position: sticky;
+    top: 0;
+    background: #222;
+    color: white;
+    padding: 15px;
+  }
+  
+  header a:any-link {
+    color: #ffdd57;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para las secciones de cada idioma */
+  section {
+    display: none;
+    padding: 30px;
+    border-bottom: 2px solid #ccc;
+    background: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    margin-top: 15px;
+  }
+
+  /* Mostrar la sección correspondiente cuando se hace clic en el enlace */
+section:target {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Mostrar el contenido en español por defecto */
+  body:not(:has(section:target)) #es {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Estilo para las tarjetas dentro de cada sección */
+  .language-box:dir(ltr) {
+    text-align: left;
+    background: #e0f7fa;
+  }
+  
+  /* Cajas interactivas que parecen botones */
+  .card {
+    border: 2px solid #aaa;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    cursor: pointer; /* Aquí aparece la manito al pasar el mouse */
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    background-color: #f9f9f9;
+  }
+  

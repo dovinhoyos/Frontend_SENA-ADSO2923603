@@ -63,51 +63,50 @@ h1 {
 .castillo:has(.zona input:focus) {
   background-color: #e1f5fe;
 }
-  
-  /* 🎯 TARGET OCULTO POR DEFECTO */
+
+/* 🎯 TARGET OCULTO POR DEFECTO */
 .target {
-    display: none;
-    padding: 15px;
-    border: 2px dashed #999;
-    margin-top: 30px;
-    background-color: #f9f9f9;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  /* ✅ TARGET ACTIVADO */
-  .target:target {
-    display: block;
-    background-color: #fff3cd;
-    border-color: #ff9800;
-    box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
-    transform: scale(1.03);
-  }
-  
-  .target:target::before {
-    content: "🎯 ¡Objetivo Activado!";
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #f60f00;
-  }
-  
-  .botones {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .botones a {
-    display: inline-block;
-    margin: 5px;
-    text-decoration: none;
-    background-color: #2196f3;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-  }
-  
-  .botones a:hover {
-    background-color: #e68900;
-  }
-  
+  display: none;
+  padding: 15px;
+  border: 2px dashed #999;
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ✅ TARGET ACTIVADO */
+.target:target {
+  display: block;
+  background-color: #fff3cd;
+  border-color: #ff9800;
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+  transform: scale(1.03);
+}
+
+.target:target::before {
+  content: "🎯 ¡Objetivo Activado!";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #f60f00;
+}
+
+.botones {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.botones a {
+  display: inline-block;
+  margin: 5px;
+  text-decoration: none;
+  background-color: #2196f3;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.botones a:hover {
+  background-color: #e68900;
+}

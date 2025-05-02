@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <strong>Idioma Aventura</strong> |
+        <a href="#es">Español</a> |
+        <a href="#en">English</a>
+      </header>
+      
+      <!-- Sección en Español -->
+      <section id="es" class="language-box" dir="ltr">
+      
+        <h2>¡Bienvenido, aventurero!</h2>
+      
+        <div class="card">
+          <p>Estás en una tierra mágica donde el idioma lo cambia todo.</p>
+          <a href="#en">🌐 Cambiar a inglés</a>
+        </div>
+      
+        <div class="card">
+          <p>Pasa el ratón sobre esta tarjeta para ver un efecto <em>:hover</em>.</p>
+        </div>
+      
+        <div class="card">
+          <p>Haz clic en los enlaces y su color cambiará por <em>:visited</em>.</p>
+        </div>
+      
+        <a href="#inicio">⬅️ Volver al inicio</a>
+      
+      </section>
+
+      <main>
+        <!-- Sección en Español -->
+        <section id="es" class="language-box" dir="ltr">
+          <h2>¡Bienvenido, aventurero!</h2>
+      
+          <div class="card" onclick="document.location='#es'">
+            <p>Estás en una tierra mágica donde el idioma lo cambia todo. Haz clic aquí para seguir explorando.</p>
+          </div>
+      
+          <div class="card" onclick="document.location='#en'">
+            <p>Haz clic para cambiar a inglés.</p>
+          </div>
+        </section>
+      
+        <!-- Sección en Inglés -->
+        <section id="en" class="language-box" dir="ltr">
+          <h2>Welcome, adventurer!</h2>
+      
+          <div class="card" onclick="document.location='#es'">
+            <p>You are in a magical land where language changes everything. Click here to continue exploring.</p>
+          </div>
+      
+          <div class="card" onclick="document.location='#es'">
+            <p>Click to switch to Spanish.</p>
+          </div>
+        </section>
+      </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/dir.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="icon">🎮</span> Icon Direction Game</h1>
+        <p class="instruction">Click the buttons to change the icon direction!</p>
+        
+        <div class="icon-display" id="icon">➡️</div>
+        
+        <div class="buttons">
+          <button class="direction-btn" onclick="setDirection('ltr')">↠ LTR</button>
+          <button class="direction-btn" onclick="setDirection('rtl')">↞ RTL</button>
+        </div>
+    
+        <button class="next-btn" onclick="nextIcon()">Next Icon</button>
+      </div>
+    
+      <script>
+        function setDirection(dir) {
+          const icon = document.getElementById('icon');
+          icon.textContent = dir === 'ltr' ? '➡️' : '⬅️';
+        }
+    
+        function nextIcon() {
+          // You can extend this logic to rotate icons randomly
+          alert("Next icon (demo)");
+        }
+      </script>
+</body>
+</html>
