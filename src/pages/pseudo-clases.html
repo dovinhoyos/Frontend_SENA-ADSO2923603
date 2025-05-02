@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pseudo-clases.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Foco Rider</h1>
+
+    <div class="castillo">
+        <div class="zona focus">
+            Puerta 1: (focus)
+            <input type="text" placeholder="clic-Tab">
+        </div>
+
+        <div class="zona focus-within">
+            Puerta 2: (f.within)
+            <input type="text" placeholder="Campo 1">
+            <input type="text" placeholder="Campo 2">
+        </div>
+
+        <div class="zona focus-visible">
+            Puerta 3: (f.visible)
+            <input type="text" id="puerta3" placeholder="Tab">
+        </div>
+
+        <div class="target" id="puerta3-target">
+            zona oculta de Rider con `:target`.
+        </div>
+
+        <div class="botones">
+            <a href="#puerta3-target">🔓 Activar zona secreta</a>
+            <a href="#">🔒 Cerrar zona secreta</a>
+        </div>
+    </div>
+</body>
+
+</html>
