@@ -66,7 +66,7 @@ section:target {
     margin: 15px 0;
     border-radius: 8px;
     cursor: pointer; /* Aquí aparece la manito al pasar el mouse */
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
   }
   
   .card:hover {
