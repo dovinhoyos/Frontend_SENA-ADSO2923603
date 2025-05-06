@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.start-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+
+.level-info {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.pseudoclass-name {
+    font-family: monospace;
+    background-color: #e9e9e9;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Adds space between options */
+}
+
+.option {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 1; /* Allows options to take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80px;
+    height: auto;
+    font-size: 2.5em;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #d0d0d0; /* Slightly darker on hover */
+
+}
+
+/* --- Using :first-child as requested in the image --- */
+.options-container .option:first-child:hover {
+    border: 2px solid green; /* Borde azul para la primera opción */
+}
+
+.option:active {
+    border: 2px solid #4CAF50; /* Borde verde al hacer clic */
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Example shadow */
+}
+/* You could add styling for other pseudoclasses here */
+.option:last-child:hover {
+    border: 2px solid #ff9800;
+}
+
+.option:nth-child(2):hover {
+    border: 2px solid #f44336;
+}
