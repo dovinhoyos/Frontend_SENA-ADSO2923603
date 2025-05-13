@@ -1,0 +1,86 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f2f5; /* Color de fondo similar al de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    background-color: #ffffff; /* Fondo blanco de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px;
+    width: 300px; /* Ancho de la tarjeta, ajústalo según necesites */
+    position: relative; /* Para posicionar el número */
+}
+
+.card-header {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.card-number {
+    color: #adb5bd; /* Color del número */
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #343a40; /* Color del título */
+    margin-top: 0; /* Ajuste para que el número no lo empuje mucho */
+    margin-bottom: 15px;
+}
+
+.priority-tag {
+    display: flex;
+    align-items: center;
+    background-color: #f8d7da; /* Fondo del tag de prioridad (rojo claro) */
+    color: #721c24; /* Color del texto del tag de prioridad */
+    padding: 5px 10px;
+    border-radius: 20px; /* Bordes redondeados para el tag */
+    font-size: 0.85em;
+}
+
+.priority-tag i {
+    margin-right: 5px;
+    color: #721c24; /* Asegura que el icono tenga el mismo color */
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Para hacer la imagen redonda */
+    margin-right: 10px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+
+.username {
+    color: #6c757d; /* Color del nombre de usuario */
+    font-size: 0.95em;
+}
+
+/* Media query para mejorar la visualización en pantallas más pequeñas */
+@media (max-width: 350px) {
+    .card {
+        width: 90%;
+    }
+}
