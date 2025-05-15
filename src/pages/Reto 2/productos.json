@@ -1,0 +1,154 @@
+db.createCollection("PRODUCTOS",{ 
+    validator: {
+        $jsonSchema: {
+        bsonType: "object",
+        required: [ "codigo", "nombre", "categoria", "precio" ],
+        properties: {
+        codigo: {
+        bsonType: "int",
+        minimum: 1000,
+        description: "Código que identifica el producto"
+        },
+        nombre: {
+            bsonType: "string", 
+            description: "Nombre del producto ]",
+        },
+        categoria: {
+            bsonType: "string",
+            enum: [ "Electrodomestico", "Ropa", "Calzado" ],
+            description: "solo puede ser una de esas categorías",
+        },
+        precio: {
+            bsonType: "int",
+            minimum: 0,
+            description: "Precio del producto tipo entero"
+        }
+    }
+    }
+    } ,
+    validationLevel: "strict",
+    validationAction: "error",
+})
+
+{
+    'codigo': 500,
+'nombre': 'Televisor',
+'categoria': 'Electrodomestico',
+'precio': 2500000
+}
+
+db.createCollection("ALUMNOS", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["identificacion", "nombres", "apellidos", "correo", "fechaNacimiento", "sexo", "estrato"],
+            properties: {
+                identificacion: {
+                    bsonType: "string",
+                    minLength: 5,
+                    maxLength: 15,
+                    description: "Debe ser una cadena de texto con longitud entre 5 y 15"
+                },
+                nombres: {
+                    bsonType: "string",
+                    description: "Debe ser una cadena de texto"
+                },
+                apellidos: {
+                    bsonType: "string",
+                    description: "Debe ser una cadena de texto"
+                },
+                correo: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+                    description: "Debe ser una dirección de correo válida (texto@texto.texto)"
+                },
+                fechaNacimiento: {
+                    bsonType: "date",
+                    description: "Debe ser de tipo fecha"
+                },
+                sexo: {
+                    bsonType: "string",
+                    enum: ["Femenino", "Masculino", "No Binario"],
+                    description: "Debe ser 'Femenino', 'Masculino' o 'No Binario'"
+                },
+                estrato: {
+                    bsonType: "int",
+                    minimum: 1,
+                    maximum: 6,
+                    description: "Debe ser un entero entre 1 y 6"
+                }
+            }
+        }
+    },
+    validationLevel: "strict",
+    validationAction: "error"
+});
+
+db.createCollection("PEDIDOS", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["codigo", "cliente", "direccionCliente", "fechaPedido", "fechaEntrega", "telefonoCliente", "correoCliente", "Productos", "estadoPedido"], 
+            properties: {
+                codigo: {
+                    bsonType: "int",
+                    description: "Código único del pedido"
+                },
+                cliente: {
+                    bsonType: "string",
+                    description: "Nombre completo del cliente"
+                },
+                direccionCliente: {
+                    bsonType: "string",
+                    description: "Dirección del cliente"
+                },
+                fechaPedido: {
+                    bsonType: "date",
+                    description: "Fecha en que se realizó el pedido"
+                },
+                fechaEntrega: {
+                    bsonType: "date",
+                    description: "Fecha de entrega del pedido"
+                },
+                telefonoCliente: {
+                    bsonType: "string",
+                    minLength: 7,
+                    maxLength: 12,
+                    description: "Teléfono del cliente (longitud entre 7 y 12)"
+                },
+                correoCliente: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+                    description: "Correo electrónico del cliente (formato válido)"
+                },
+                FormaEnvio: {
+                    bsonType: "string",
+                    enum: ["Aérea", "Marítima", "Terrestre"],
+                    description: "Forma de envío del pedido (Aérea, Marítima o Terrestre)",
+                },
+                Productos: {
+                    bsonType: "array",
+                    minItems: 1,
+                    uniqueItems: true,
+                    items: {
+                        bsonType: "string"
+                    },
+                    description: "Array de productos (mínimo 1, únicos, tipo string)"
+                },
+                estadoPedido: {
+                    bsonType: "string",
+                    enum: ["Enviado", "Entregado", "NoEntregado"],
+                    description: "Estado del pedido (Enviado, Entregado, NoEntregado)"
+                },
+                observacionesEntrega: {
+                    bsonType: ["string", "null"], 
+                    description: "Observaciones sobre la entrega (puede ser nulo)"
+                }
+            }
+        }
+    },
+    validationLevel: "strict",
+    validationAction: "error"
+});
+
+db.ALUMNOS.insertOne({})
